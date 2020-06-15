@@ -1,34 +1,18 @@
 package util;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Objects;
-import java.util.Properties;
 
 class DbUtil {
 
-    private static final String USERNAME;
+    private static final String USERNAME = "root";
 
-    private static final String PASSWORD;
+    private static final String PASSWORD = "123456";
 
-    private static final String URL;
+    private static final String URL = "jdbc:mysql://localhost:3306/fwtest?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
 
-    private static final String DRIVER;
-
-    static {
-        Properties properties = new Properties();
-        try {
-            properties.load(Objects.requireNonNull(DbUtil.class.getClassLoader().getResourceAsStream("db.properties")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        USERNAME = properties.getProperty("username");
-        PASSWORD = properties.getProperty("password");
-        URL = properties.getProperty("url");
-        DRIVER = properties.getProperty("driver");
-    }
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     static Connection getConnection() {
         try {
