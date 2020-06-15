@@ -3,15 +3,16 @@
 <%@ page import="dao.HouseTypeDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>房屋的列表显示</title>
 </head>
+
 <body>
     <%
         List<House> houses = (List<House>) request.getAttribute("houses");
         HouseTypeDao dao = new HouseTypeDao();
     %>
-
     <table border="1">
         <tr>
             <td>房号</td>
@@ -40,4 +41,5 @@
     </table>
     <a href="add.jsp">添加</a>
 </body>
+
 </html>

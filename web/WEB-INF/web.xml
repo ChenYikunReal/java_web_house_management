@@ -35,4 +35,13 @@
         <url-pattern>/UpdateHouseServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>QueryByPageServlet</servlet-name>
+        <servlet-class>servlet.QueryByPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryByPageServlet</servlet-name>
+        <url-pattern>/QueryByPageServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

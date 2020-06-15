@@ -75,4 +75,5 @@ public class House {
     public void setTypeId(int typeId) {
         this.typeId = typeId;
     }
+
 }

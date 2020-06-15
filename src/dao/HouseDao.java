@@ -28,4 +28,12 @@ public class HouseDao {
                 h.getArea(), h.getPrice(), h.getInfo(), h.getTypeId());
     }
 
+    public int count() {
+        return SqlUtil.queryForOne(Integer.class, "select count(*) from house");
+    }
+
+    public List<House> queryAllByPage(int page, int size) {
+        return SqlUtil.queryForList(House.class, "select * from house limit ?,?", (page-1)*size, size);
+    }
+
 }

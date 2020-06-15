@@ -3,9 +3,11 @@
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>添加房屋信息</title>
 </head>
+
 <body>
     <%
         HouseTypeDao dao = new HouseTypeDao();
@@ -32,4 +34,5 @@
     </form>
     <a href="QueryAllHousesServlet">返回</a>
 </body>
+
 </html>

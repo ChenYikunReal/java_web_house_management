@@ -5,23 +5,25 @@
 <%@ page import="entity.House" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>修改房屋信息</title>
 </head>
+
 <body>
 <%
-    HouseTypeDao typeDao = new HouseTypeDao();
     HouseDao houseDao = new HouseDao();
-    List<HouseType> types = typeDao.queryAllTypes();
+    HouseTypeDao houseTypeDao = new HouseTypeDao();
+    List<HouseType> types = houseTypeDao.queryAllTypes();
     int id = (int) request.getAttribute("houseId");
-    House h = houseDao.queryHouseById(id);
+    House house = houseDao.queryHouseById(id);
 %>
 <form action="UpdateHouseServlet" method="post">
     房号: <input type="text" name="houseId" value="<%=id%>" readonly="readonly"> <br>
-    房名: <input type="text" name="title" value="<%=h.getTitle()%>"> <br>
-    面积: <input type="text" name="area" value="<%=h.getArea()%>"> <br>
-    价格: <input type="text" name="price" value="<%=h.getPrice()%>"> <br>
-    介绍: <input type="text" name="info" value="<%=h.getInfo()%>"> <br>
+    房名: <input type="text" name="title" value="<%=house.getTitle()%>"> <br>
+    面积: <input type="text" name="area" value="<%=house.getArea()%>"> <br>
+    价格: <input type="text" name="price" value="<%=house.getPrice()%>"> <br>
+    介绍: <input type="text" name="info" value="<%=house.getInfo()%>"> <br>
     <label>
         <select name="type">
             <%
@@ -37,4 +39,5 @@
 </form>
     <a href="QueryAllHousesServlet">返回</a>
 </body>
+
 </html>
